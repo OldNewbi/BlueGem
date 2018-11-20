@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蓝宝矿机</title>
+    <link rel="stylesheet" type="text/css" id="css" href="css/900.css"/>
+    <script type="text/javascript">
+        /*var height=window.screen.height;
+        var css='';
+        if(height<=768){
+            css="css/768.css";
+        }else if(height>768 && height<=900){
+            css="css/900.css";
+        }else{
+            css="css/1080.css";
+        }
+        document.getElementById('css').href=css;*/
+    </script>
+</head>
+<body onload="load()">
+<div class="top"></div>
+<div class="left">
+    <div class="left_first">
+        <h3>生产条码绑定</h3>
+        <form id="form1" class="form">
+            <table>
+            <tr><td><label>生产任务单：</label></td><td><input type="text" id="ip1" name="wo"/></td>
+            <td><label>SAP_SN:</label></td><td><input type="text" id="ip2" name="sap_sn"/></td></tr>
+            <tr><td><label>AMD_SN:</label></td><td><input type="text" id="ip3" name="amd_sn"/></td>
+            <td><label>AMD_DS:</label></td><td><input type="text" id="ip4" name="amd_ds"/></td></tr>
+            <tr><td><label>显卡1_SN:</label></td><td><input type="text" id="ip_video1" name="video1"></td>
+            <td><label>显卡2_SN:</label></td><td><input type="text" id="ip_video2" name="video2"></td></tr>
+            <tr><td><label>显卡3_SN:</label></td><td><input type="text" id="ip_video3" name="video3"></td>
+            <td><label>显卡4_SN:</label></td><td><input type="text" id="ip_video4" name="video4"></td></tr>
+            <tr><td><label>显卡5_SN:</label></td><td><input type="text" id="ip_video5" name="video5"></td>
+            <td><label>显卡6_SN:</label></td><td><input type="text" id="ip_video6" name="video6"></td></tr>
+            <tr><td><label>显卡7_SN:</label></td><td><input type="text" id="ip_video7" name="video7"></td>
+            <td><label>显卡8_SN:</label></td><td><input type="text" id="ip_video8" name="video8"></td></tr>
+            <tr><td><label>显卡9_SN:</label></td><td><input type="text" id="ip_video9" name="video9"></td>
+            <td><input type="button" value="提交" id="put" onclick="send()"/></td></tr>
+            </table>
+        </form>
+    </div>
+    <div class="left_second">
+        <h3>出库扫描</h3>
+        <form id="form2" class="form">
+            <label>扫描外箱条码：</label><input type="text" name="crate" id="out_isn"/>
+            <input type="button" id="put1" value="确定" onclick="ajax(this.parentNode,'stock.php','return_message',getSelect)"/>
+        </form>
+    </div>
+    <div class="left_third">
+
+    </div>
+</div>
+<div class="right">
+    <div class="right_first" id="return_message"></div>
+    <div class="right_second" id="return_result">
+        <h3>报盘查询</h3>
+        <form id="form3" class="form" action="select.php" method="post" target="_blank">
+            <table>
+                <tr><td><label>生产工单:</label></td><td><input type="text" name="sWo"/></td><td></td></tr>
+                <tr><td><label>外箱条码:</label></td><td><input type="text" name="sCrate"/></td><td></td></tr>
+                <tr><td><label>扫描时间(从):</label></td><td><input type="text" name="sTimeIn"/></td><td><label>参考格式：2018-05-11 15:55:34</label></td></tr>
+                <tr><td><label>扫描时间(到):</label></td><td><input type="text" name="sTimeOut"/></td><td><label>参考格式：2018-05-11 15:55:34</label></td></tr>
+                <tr><td></td><td><input type="submit" id="put2" value="提交" /></td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="footer"></div>
+<script type="text/javascript" src="js/system.js"></script>
+</body>
+</html>
